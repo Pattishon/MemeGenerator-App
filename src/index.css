@@ -1,17 +1,118 @@
+:root{
+    --red: #dd1923;
+    --purple: #781c2e;
+}
+*{
+    box-sizing: border-box;
+    font-family: Impact, Charcoal, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;  
+    min-height: 100vh;
+    background: var(--purple);
+}
+.container{
+    overflow-x: hidden;
+    width: 100%;
+}
+.header{    
+    color: white;
+    -webkit-text-stroke-width: .1em;
+    -webkit-text-stroke-color: black;
+    text-transform: uppercase;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: space-between;
+    background-image: linear-gradient(var(--red), var(--purple));
+    
+/*    border: 1px solid red;*/
+}
+.header h1{
+    padding: .2em;
+    font-size: 2em;
+    
+/*    border: 1px solid blue;*/
+}
+.header img{
+    max-height: 4em;
+    
+/*    border: 1px solid green;*/
+}
+
 .meme-generator{
     position: relative;
-    width: 100%;
-    height: 90vh;
+    width: 100vw;
+    background: var(--purple);
+}
+.meme-generator form{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: .5em;
+}
+.meme-generator input{
+    font-size: 1.2em;
+    outline: none;
+    border: 1px solid var(--purple);
+    padding: .2em;
+}
+.meme-generator button{
+    grid-column-start: 2;
+    grid-row: 1/3;
+    background: var(--purple);
+    border: var(--purple);
+    cursor: pointer;
+    color: white;
+    font-size: 2em;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: .05em;
+    -webkit-text-stroke-color: black;
+}
+.meme-container{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    position: relative;
+    width: 100%;   
+    padding-top: 1em;
+    padding-bottom: 2em;
 }
 .meme-text{
     position: absolute;
     text-align: center;
-    width: 100%;
-    
+    width: 100%;  
+    font-size: 2em;
+    -webkit-text-stroke-width: .05em;
+    -webkit-text-stroke-color: white;
 }
 .top-text{
-    top: 10%;
+    top: 2.5%;
 }
 .bottom-text{
-    bottom: 10%;
+    bottom: 2.5%;
+}
+.meme-container img{    
+    width: 100%;
+}
+
+@media screen and (min-width: 760px){
+    .header h1{    
+        font-size: 3em;
+    }    
+    .meme-generator form{
+        grid-template-columns: 6fr 1fr;
+        max-width: 50em;
+        margin: 0 auto;
+    }
+    .meme-generator input{
+        font-size: 1.5em;
+    }
+    .meme-container{
+        max-width: 50em;
+        margin: 0 auto;
+    }
 }

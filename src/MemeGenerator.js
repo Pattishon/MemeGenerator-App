@@ -42,12 +42,14 @@ class MemeGenerator extends Component {
             <div className='meme-generator'>
                 <form onSubmit={this.handleSubmit}>
                     <input type='text' name='topText' value={this.state.topText} placeholder='Enter top text' onChange={this.handleChange} />
-                    <input type='text' name='bottomText' value={this.state.bottomText} placeholder='Enter top text' onChange={this.handleChange} />
-            <button>Generate</button>
+                    <input type='text' name='bottomText' value={this.state.bottomText} placeholder='Enter bottom text' onChange={this.handleChange} />
+                    <button>Go!</button>
                 </form>
-                <h2 className='meme-text top-text'>{this.state.topText}</h2>
-                <h2 className='meme-text bottom-text'>{this.state.bottomText}</h2>
-                <img src={this.state.randomImgSrc} alt='' />
+                <div className='meme-container'>
+                    <h2 className='meme-text top-text'>{this.state.topText}</h2>
+                    <h2 className='meme-text bottom-text'>{this.state.bottomText}</h2>
+                    <img src={this.state.randomImgSrc} alt='' />
+                </div>
             </div>
         )
     }
